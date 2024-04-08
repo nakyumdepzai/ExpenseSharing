@@ -20,13 +20,14 @@ import javax.naming.NamingException;
  * @author nakyumdepzaii
  */
 public class reportDAO {
+
     private List<reportDTO> reports;
 
     public List<reportDTO> getReports() {
         return reports;
     }
 
-    public void showReportInfo() throws NamingException, SQLException {
+    public void showReportInfo() throws NamingException, SQLException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         ResultSet rs = null;
@@ -41,19 +42,19 @@ public class reportDAO {
                 Date createdDate = rs.getDate("createdDate");
                 String personName = rs.getNString("personName");
                 reportDTO dto = new reportDTO(reportName, createdDate, personName);
-                if(this.reports == null){
+                if (this.reports == null) {
                     this.reports = new ArrayList<>();
                 }
                 this.reports.add(dto);
             }
         } finally {
-            if(rs != null){
+            if (rs != null) {
                 rs.close();
             }
-            if(stm != null){
+            if (stm != null) {
                 stm.close();
             }
-            if(con != null){
+            if (con != null) {
                 con.close();
             }
         }

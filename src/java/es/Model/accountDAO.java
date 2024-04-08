@@ -26,7 +26,7 @@ public class accountDAO {
         return accounts;
     }
 
-    public void searchAccount(String searchValue) throws SQLException, NamingException {
+    public void searchAccount(String searchValue) throws SQLException, NamingException, ClassNotFoundException {
         Connection con = null;
         PreparedStatement stm = null;
         ResultSet rs = null;

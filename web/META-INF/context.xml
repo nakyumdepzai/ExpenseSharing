@@ -6,7 +6,7 @@
         name="ExpenseSharing"
         password="12345"
         type="javax.sql.DataSource"
-        url="jdbc:sqlserver://localhost:1433;databaseName=ExpenseSharing1"
+        url="jdbc:sqlserver://localhost:1433;databaseName=ExpenseSharing"
         username="sa"
     />
 </Context>

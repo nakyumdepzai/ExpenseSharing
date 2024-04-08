@@ -40,7 +40,7 @@ public class ShowReportServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, NamingException, SQLException {
+            throws ServletException, IOException, NamingException, SQLException, ClassNotFoundException {
         response.setContentType("text/html;charset=UTF-8");
         String url = REPORT_PAGE;
         try {
@@ -77,6 +77,8 @@ public class ShowReportServlet extends HttpServlet {
             Logger.getLogger(ShowReportServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
             Logger.getLogger(ShowReportServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ShowReportServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -96,6 +98,8 @@ public class ShowReportServlet extends HttpServlet {
         } catch (NamingException ex) {
             Logger.getLogger(ShowReportServlet.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
+            Logger.getLogger(ShowReportServlet.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(ShowReportServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
